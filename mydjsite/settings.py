@@ -1,4 +1,3 @@
-import os;
 # Django settings for mydjsite project.
 
 import os

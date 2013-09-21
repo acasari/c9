@@ -1,0 +1,10 @@
+{% extends "_layouts/base.html" %}
+{% load url from future %}
+
+{% block page_title %}{{ post.title }} | {% endblock %}
+
+{% block page_content %}
+<h2>{{ post.title }}</h2>
+{{ post.content|linebreaks }}
+<p>{{ post.updated_at }}</p>
+{% endblock %}

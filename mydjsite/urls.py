@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from blog.views import blog_post, blog_detail
+from . import views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -15,6 +16,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r"^$", blog_post),
-    url(r"^blog/(?P<pk>\d+)/$", blog_detail),
+    url(r"^blog/$", blog_post, name='blog_post'),
+    url(r"^$", views.HomepageView.as_view(), name="home"),
+    url(r"^blog/(?P<pk>\d+)/$", blog_detail, name='blog_detail'),
 )
